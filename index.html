@@ -271,8 +271,7 @@ const iosVersion = getIOSVersion();
 
 if (iosVersion > 17.0) {
 await sleep(1000);
-document.getElementById("log").innerText = document.getElementById("log").innerText + '\n [-] iOS ' + iosVersion +' is Unsupported! Supported version: 17.0';} else { 
-if (iosVersion == '17.0') {
+document.getElementById("log").innerText = document.getElementById("log").innerText + '\n [-] iOS ' + iosVersion +' is Unsupported! Supported version: 17.0';} else {
 await sleep(100); document.getElementById("log").innerText = document.getElementById("log").innerText + '\n [+] Starting exploit...'; 
 await sleep(100); document.getElementById("log").innerText = document.getElementById("log").innerText + '\n [+] Exploiting kfd...'; 
 await sleep(6500); document.getElementById("log").innerText = document.getElementById("log").innerText + '\n [#] Done!'; 
@@ -281,7 +280,7 @@ await sleep(100); document.getElementById("log").innerText = document.getElement
 await sleep(100); document.getElementById("log").innerText = document.getElementById("log").innerText + '\n [+] Patching signatures: 0xE5df200';
 await sleep(100); document.getElementById("log").innerText = document.getElementById("log").innerText + '\n [+] Installing TrollStore...'; 
 await sleep(3000); document.getElementById("log").innerText = document.getElementById("log").innerText + '\n [#] Done!'; 
-await sleep(100); document.getElementById("log").innerText = document.getElementById("log").innerText + '\n [#] ReSpring please!'; } else { document.getElementById("log").innerText = document.getElementById("log").innerText + '\n [-] iOS ' + iosVersion +' is Unsupported! Supported version: 17.0'; }
+await sleep(100); document.getElementById("log").innerText = document.getElementById("log").innerText + '\n [#] ReSpring please!';
 }
 
 }
