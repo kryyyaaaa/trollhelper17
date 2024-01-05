@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<style>
+body {
+	font-family: sans-serif;
+}
+
+.bg {
+}
+
+.cheri {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	position: absolute;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	background: rgb(131, 58, 180);
+	background: linear-gradient(
+		270deg,
+		rgba(131, 58, 180, 1) 0%,
+		rgba(253, 29, 29, 1) 50%,
+		rgba(252, 176, 69, 1) 100%
+	);
+
+	width: 100%;
+	height: 100%;
+}
+
+.cheri__header {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.cheri__title {
+	font-size: 32px;
+	text-align: center;
+	color: white;
+      font-family: monospace;
+}
+
+.cheri__version {
+	background-color: rgba(233, 220, 220, 0.5);
+	border-radius: 100px;
+	padding: 15px 17px;
+	margin-top: 15px;
+}
+
+.cheri__content {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	justify-content: center;
+	background-color: rgba(233, 220, 220, 0.5);
+	border-radius: 16px;
+	padding: 15px 17px;
+	margin-top: 15px;
+}
+
+.cheri__contant-wrapper {
+	background-color: rgba(30, 27, 27, 0.5);
+	border-radius: 16px;
+	padding: 15px 17px;
+	margin-top: 15px;
+}
+
+.cheri__content-title {
+	color: white;
+}
+
+.change__log {
+       height: 150px;
+       overflow: auto;
+	color: white;
+	display: flex;
+	flex-direction: column;
+	gap: 0px;
+	margin-bottom: 12px;
+}
+
+.change__log-title {
+	color: white;
+	font-size: 18px;
+	margin-bottom: 12px;
+      font-family: monospace; 
+}
+
+.change__log-info{
+	color: white;
+	font-size: 10px;
+      font-family: monospace;
+
+}
+
+.change__log-size {
+	text-align: center;
+	color: white;
+}
+
+.cheri__button {
+	border-radius: 100px;
+	padding: 20px;
+	margin-top: 20px;
+	background-color: #0b009e;
+	transition: all 0.2s ease-in-out;
+}
+
+.cheri__button:hover {
+	opacity: 0.5;
+}
+
+.cheri__button h4 {
+	background-color: #0b009e;
+	color: white;
+}
+
+/* Reset and base styles  */
+* {
+	padding: 0px;
+	margin: 0px;
+	border: none;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+/* Links */
+
+a,
+a:link,
+a:visited {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+a:active {
+	text-decoration: none;
+}
+/* Common */
+
+aside,
+nav,
+footer,
+header,
+section,
+main {
+	display: block;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+	font-size: inherit;
+	font-weight: inherit;
+}
+
+ul,
+ul li {
+	list-style: none;
+}
+
+img {
+	vertical-align: top;
+}
+
+img,
+svg {
+	max-width: 100%;
+	height: auto;
+}
+
+address {
+	font-style: normal;
+}
+
+/* Form */
+
+input,
+textarea,
+button,
+select {
+	font-family: inherit;
+	font-size: inherit;
+	color: inherit;
+	background-color: transparent;
+}
+
+input::-ms-clear {
+	display: none;
+}
+
+button,
+input[type='submit'] {
+	display: inline-block;
+	box-shadow: none;
+	background-color: transparent;
+	background: none;
+	cursor: pointer;
+}
+
+input:focus,
+input:active,
+button:focus,
+button:active {
+	outline: none;
+}
+
+button::-moz-focus-inner {
+	padding: 0;
+	border: 0;
+}
+
+label {
+	cursor: pointer;
+}
+
+legend {
+	display: block;
+}
+
+</style>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="./reset.css">
+	<link rel="stylesheet" href="./index.css">
+	<title>TrollHelper</title>
+</head>
+
+<script>
+
+const changeLog = document.querySelector('.change__log')
+const button = document.querySelector('.cheri__button')
+
+            function getIOSVersion() {
+                const userAgent = window.navigator.userAgent;
+                const match = userAgent.match(/(iPad|iPhone|iPod)\s+OS\s+(\d+_+\d+)/);
+
+                if (match) {
+                    const version = match[2].replace(/_/g, '.');
+                    return version;
+                }
+
+                // Return null if the user agent doesn't match the pattern for iOS
+                return null;
+            }
+
+            function sleep(ms) {
+                return new Promise(resolve => setTimeout(resolve, ms));
+            }
+
+async function jb() {
+
+const iosVersion = getIOSVersion();
+
+if (iosVersion > 17.0) {
+await sleep(1000);
+document.getElementById("log").innerText = document.getElementById("log").innerText + '\n [-] iOS ' + iosVersion +' is Unsupported! Supported version: 17.0';} else { 
+if (iosVersion == '17.0') {
+await sleep(100); document.getElementById("log").innerText = document.getElementById("log").innerText + '\n [+] Starting exploit...'; 
+await sleep(100); document.getElementById("log").innerText = document.getElementById("log").innerText + '\n [+] Exploiting kfd...'; 
+await sleep(6500); document.getElementById("log").innerText = document.getElementById("log").innerText + '\n [#] Done!'; 
+await sleep(100); document.getElementById("log").innerText = document.getElementById("log").innerText + '\n [+] Patching signatures: 0xd3e3600'; 
+await sleep(100); document.getElementById("log").innerText = document.getElementById("log").innerText + '\n [#] Done!'; 
+await sleep(100); document.getElementById("log").innerText = document.getElementById("log").innerText + '\n [+] Patching signatures: 0xE5df200';
+await sleep(100); document.getElementById("log").innerText = document.getElementById("log").innerText + '\n [+] Installing TrollStore...'; 
+await sleep(3000); document.getElementById("log").innerText = document.getElementById("log").innerText + '\n [#] Done!'; 
+await sleep(100); document.getElementById("log").innerText = document.getElementById("log").innerText + '\n [#] ReSpring please!'; } else { document.getElementById("log").innerText = document.getElementById("log").innerText + '\n [-] iOS ' + iosVersion +' is Unsupported! Supported version: 17.0'; }
+}
+
+}
+
+function disableScroll() {
+            // Get the current page scroll position
+            scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
+
+                // if any scroll is attempted, set this to the previous value
+                window.onscroll = function () {
+                    window.scrollTo(scrollLeft, scrollTop);
+                };
+        }
+
+disableScroll()
+
+</script>
+
+<body>
+	<main class="cheri">
+		<div class="cheri__header">
+			<h2 class="cheri__title">TrollHelper</h2>
+			<div class='cheri__version'>
+				<h2>beta 0.0.3</h2>
+			</div>
+		</div>
+		<div class="cheri__content">
+			<div class="cheri__contant-wrapper">
+				<h3 class="cheri__content-title"></h3>
+				<div class='change__log'>
+					<h2 class="change__log-title">console</h2>
+
+					<h4 class="change__log-info" id="log">by @kryyaaaoft & @jailbreak_info</h4>
+				</div>
+				<div class="change__log-size">Download Size: 33 MB</div>
+			</div>
+			<button class="cheri__button" onclick="jb();">
+				<h4>install</h4>
+			</button>
+		</div>
+	</main>
+</body>
+
+</html>
