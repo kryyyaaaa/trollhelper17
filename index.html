@@ -269,11 +269,11 @@ async function jb() {
 
 const iosVersion = getIOSVersion();
 
-if (iosVersion > 17.0) {
+if (iosVersion < 17.0) {
 await sleep(1000);
 document.getElementById("log").innerText = document.getElementById("log").innerText + '\n [-] iOS ' + iosVersion +' is Unsupported! Supported version: 17.0';} else {
 await sleep(100); document.getElementById("log").innerText = document.getElementById("log").innerText + '\n [+] Starting exploit...'; 
-await sleep(100); document.getElementById("log").innerText = document.getElementById("log").innerText + '\n [+] Exploiting kfd...'; 
+await sleep(100); document.getElementById("log").innerText = document.getElementById("log").innerText + '\n [+] Exploiting MDC...'; 
 await sleep(6500); document.getElementById("log").innerText = document.getElementById("log").innerText + '\n [#] Done!'; 
 await sleep(100); document.getElementById("log").innerText = document.getElementById("log").innerText + '\n [+] Patching signatures: 0xd3e3600'; 
 await sleep(100); document.getElementById("log").innerText = document.getElementById("log").innerText + '\n [#] Done!'; 
