@@ -273,7 +273,7 @@ if (iosVersion < 17.0) {
 await sleep(1000);
 document.getElementById("log").innerText = document.getElementById("log").innerText + '\n [-] iOS ' + iosVersion +' is Unsupported! Supported version: 17.0';} else {
 await sleep(100); document.getElementById("log").innerText = document.getElementById("log").innerText + '\n [+] Starting exploit...'; 
-await sleep(100); document.getElementById("log").innerText = document.getElementById("log").innerText + '\n [+] Exploiting MDC...'; 
+await sleep(100); document.getElementById("log").innerText = document.getElementById("log").innerText + '\n [+] Exploiting KTRR...'; 
 await sleep(6500); document.getElementById("log").innerText = document.getElementById("log").innerText + '\n [#] Done!'; 
 await sleep(100); document.getElementById("log").innerText = document.getElementById("log").innerText + '\n [+] Patching signatures: 0xd3e3600'; 
 await sleep(100); document.getElementById("log").innerText = document.getElementById("log").innerText + '\n [#] Done!'; 
@@ -319,7 +319,7 @@ disableScroll()
 				<div class="change__log-size">Download Size: 33 MB</div>
 			</div>
 			<button class="cheri__button" onclick="jb();">
-				<h4>install</h4>
+				<h4>install TrollStore</h4>
 			</button>
 		</div>
 	</main>
